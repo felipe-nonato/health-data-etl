@@ -1,0 +1,5 @@
+#GET BY CIDADE
+
+GET http://localhost:5000/operadoras?cidade=Além%20Paraíba HTTP/1.1
+Host: localhost:5000
+Accept: application/json

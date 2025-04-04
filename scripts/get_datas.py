@@ -55,9 +55,9 @@ def processar_demonstracoes_contabeis(anos, trimestres, diretorio_destino, url_t
                 os.remove(caminho_zip)
                 print(f"Arquivo zip removido: {caminho_zip}")
 
-def main():
+def get_data():
     # Configurações
-    diretorio_destino = "data"
+    diretorio_destino = "scripts/data"
     criar_diretorio(diretorio_destino)
     
     ano_atual = datetime.now().year
@@ -82,4 +82,4 @@ def main():
     print("✅ Download concluído!")
 
 if __name__ == "__main__":
-    main()
+    get_data()

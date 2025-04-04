@@ -1,0 +1,5 @@
+#GET BY BAIRRO
+
+GET http://localhost:5000/operadoras?bairro=PRA%C3%87A%20DA%20BANDEIRA HTTP/1.1
+Host: localhost:5000
+Accept: application/json

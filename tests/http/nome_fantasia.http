@@ -1,0 +1,5 @@
+#GET BY NOME FANTASIA
+
+GET http://localhost:5000/operadoras?nome_fantasia=A.P.S.%20SAÚDE HTTP/1.1
+Host: localhost:5000
+Accept: application/json
