@@ -1,11 +1,13 @@
 # Health Data ETL
 
 ## 📋 Sobre
+
 Sistema de processamento de dados que inclui web scraping, transformação de dados, API REST e interface web.
 
 ## 🚀 Tecnologias
 
 ### Backend
+
 - Python 3.8+
 - Flask
 - PostgreSQL
@@ -55,37 +57,43 @@ Sistema de processamento de dados que inclui web scraping, transformação de da
   - Werkzeug: 3.1.3
 
 ### Frontend
+
 - Vue.js
 - Axios
 
 ## 🛠️ Instalação
 
 1. Clone o repositório
+
 ```bash
 git clone https://github.com/felipe-nonato/health-data-etl.git
 cd health-data-etl
 ```
 
 2. Configure o ambiente virtual
+
 ```bash
-python -m venv venv
+python3 -m venv venv
 source dir_name/bin/activate  # Linux/Mac
 # ou
 .\dir_name\Scripts\activate  # Windows
 ```
 
 3. Instale as dependências
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. Configure as variáveis de ambiente
+
 ```bash
 cp .env.sample .env
 # Edite o arquivo .env com suas configurações
 ```
 
 5. Inicie o banco de dados
+
 ```bash
 docker-compose up -d postgres
 docker exec -i meu_postgres psql -U meu_usuario -d meu_banco < ~/Codes/health-data-etl/scripts/querys/init.sql
@@ -98,7 +106,7 @@ docker cp /home/lipe/Codes/health-data-etl/scripts/data/. meu_postgres:/tmp
 ├── api/                 # Código da API
 ├── scraping/            # Scraping de dados
 ├── data-transformation/  # Transformação dos dados
-├── scripts/            # Scripts de download e consulta de dados de operadoras ANS 
+├── scripts/            # Scripts de download e consulta de dados de operadoras ANS
 ├── frontend/          # Interface Vue.js
 └── tests/            # Testes unitários e integração
 ```
@@ -106,16 +114,19 @@ docker cp /home/lipe/Codes/health-data-etl/scripts/data/. meu_postgres:/tmp
 ## 🔍 Uso
 
 ### Executando o ETL
+
 ```bash
-python etl.py # Esse Script já inicia a API
+python3 etl.py # Esse Script já inicia a API
 ```
 
 ### Iniciando a API
+
 ```bash
 python3 api/main.py
 ```
 
 ### Rodando o Frontend
+
 ```bash
 cd frontend
 npm install
@@ -125,7 +136,6 @@ npm run dev
 ## 🧪 Testes
 
 No dirétorio `/tests` é possível encontrar uma collection do Postman para teste de API e uma pasta http para teste com extensões no Vscode.
-
 
 ## 🤝 Contribuindo
 
