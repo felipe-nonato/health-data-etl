@@ -13,10 +13,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/operadoras?nome_fantasia=A.P.S.%20SAÚDE",
+					"raw": "http://69.62.100.190:5000/operadoras?nome_fantasia=A.P.S.%20SAÚDE",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"69.62.100.190"
 					],
 					"port": "5000",
 					"path": [
@@ -38,10 +38,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/operadoras?query=paraiba",
+					"raw": "http://69.62.100.190:5000/operadoras?query=paraiba",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"69.62.100.190"
 					],
 					"port": "5000",
 					"path": [
@@ -63,10 +63,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/operadoras?cidade=Além%20Paraíba",
+					"raw": "http://69.62.100.190:5000/operadoras?cidade=Além%20Paraíba",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"69.62.100.190"
 					],
 					"port": "5000",
 					"path": [
@@ -88,10 +88,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/operadoras?cnpj=7867825000157",
+					"raw": "http://69.62.100.190:5000/operadoras?cnpj=7867825000157",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"69.62.100.190"
 					],
 					"port": "5000",
 					"path": [
@@ -113,10 +113,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/operadoras?modalidade=Administradora%20de%20Benef%C3%ADcios",
+					"raw": "http://69.62.100.190:5000/operadoras?modalidade=Administradora%20de%20Benef%C3%ADcios",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"69.62.100.190"
 					],
 					"port": "5000",
 					"path": [
@@ -138,10 +138,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/operadoras?razao_social=18%20DE%20JULHO%20ADMINISTRADORA%20DE%20BENEF%C3%ADCIOS%20LTDA",
+					"raw": "http://69.62.100.190:5000/operadoras?razao_social=18%20DE%20JULHO%20ADMINISTRADORA%20DE%20BENEF%C3%ADCIOS%20LTDA",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"69.62.100.190"
 					],
 					"port": "5000",
 					"path": [
@@ -163,10 +163,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/operadoras?registro_ans=419761",
+					"raw": "http://69.62.100.190:5000/operadoras?registro_ans=419761",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"69.62.100.190"
 					],
 					"port": "5000",
 					"path": [
@@ -188,10 +188,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/operadoras?uf=MG",
+					"raw": "http://69.62.100.190:5000/operadoras?uf=MG",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"69.62.100.190"
 					],
 					"port": "5000",
 					"path": [

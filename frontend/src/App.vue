@@ -19,7 +19,7 @@ const paginatedResults = computed(() => {
 
 async function fetchSearchResults(query) {
   try {
-    const response = await axios.get(`http://localhost:5000/operadoras?query=${encodeURIComponent(query)}`);
+    const response = await axios.get(`http://69.62.100.190:5000/operadoras?query=${encodeURIComponent(query)}`);
 
     // Manipula diretamente o JSON retornado
     if (Array.isArray(response.data)) {
