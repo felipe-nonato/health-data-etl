@@ -31,7 +31,7 @@ cd health-data-etl
 
 2. Configure o ambiente virtual
 ```bash
-python -m venv dir_name (substitua "dir_name" pelo diretorio que deseja trabalhar)
+python -m venv venv
 source dir_name/bin/activate  # Linux/Mac
 # ou
 .\dir_name\Scripts\activate  # Windows
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 4. Configure as variáveis de ambiente
 ```bash
-cp .env.example .env
+cp .env.sample .env
 # Edite o arquivo .env com suas configurações
 ```
 
