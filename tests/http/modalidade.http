@@ -1,0 +1,5 @@
+#GET BY MODALIDADE
+
+GET http://localhost:5000/operadoras?modalidade=Administradora%20de%20Benef%C3%ADcios HTTP/1.1
+Host: localhost:5000
+Accept: application/json
