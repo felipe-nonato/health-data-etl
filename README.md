@@ -100,8 +100,7 @@ docker cp /home/lipe/Codes/health-data-etl/scripts/data/. meu_postgres:/tmp
 ├── data-transformation/  # Transformação dos dados
 ├── scripts/            # Scripts de download e consulta de dados de operadoras ANS 
 ├── frontend/          # Interface Vue.js
-├── tests/            # Testes unitários e integração
-└── docs/            # Documentação adicional
+└── tests/            # Testes unitários e integração
 ```
 
 ## 🔍 Uso
