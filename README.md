@@ -51,6 +51,8 @@ cp .env.example .env
 5. Inicie o banco de dados
 ```bash
 docker-compose up -d postgres
+docker exec -i meu_postgres psql -U meu_usuario -d meu_banco < ~/Codes/health-data-etl/scripts/querys/init.sql
+docker cp /home/lipe/Codes/health-data-etl/scripts/data/. meu_postgres:/tmp
 ```
 
 ## 📊 Estrutura do Projeto
@@ -59,6 +61,7 @@ docker-compose up -d postgres
 ├── api/                 # Código da API
 ├── scraping/            # Scraping de dados
 ├── data-transformation/  # Transformação dos dados
+├── scripts/            # Scripts de download e consulta de dados de operadoras ANS 
 ├── frontend/          # Interface Vue.js
 ├── tests/            # Testes unitários e integração
 └── docs/            # Documentação adicional
