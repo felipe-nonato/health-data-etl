@@ -17,3 +17,15 @@ services:
 
 volumes:
   pg_data:
+  etl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: etl_container
+    restart: on-failure
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python3 etl.py
