@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "7ac1aaed-1e49-4a16-8dfd-9c246d1a1317",
+		"name": "Health-Data-ETL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43767871",
+		"_collection_link": "https://felipenonato.postman.co/workspace/Felipe-Nonato's-Workspace~b5bc9c9d-7315-40ed-8df7-b1119ed701e1/collection/43767871-7ac1aaed-1e49-4a16-8dfd-9c246d1a1317?action=share&source=collection_link&creator=43767871"
+	},
+	"item": [
+		{
+			"name": "NomeFantasia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?nome_fantasia=A.P.S.%20SAÚDE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "nome_fantasia",
+							"value": "A.P.S.%20SAÚDE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?query=paraiba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "paraiba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cidade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?cidade=Além%20Paraíba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "cidade",
+							"value": "Além%20Paraíba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CNPJ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?cnpj=7867825000157",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "cnpj",
+							"value": "7867825000157"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modalidade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?modalidade=Administradora%20de%20Benef%C3%ADcios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "modalidade",
+							"value": "Administradora%20de%20Benef%C3%ADcios"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RazaoSocial",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?razao_social=18%20DE%20JULHO%20ADMINISTRADORA%20DE%20BENEF%C3%ADCIOS%20LTDA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "razao_social",
+							"value": "18%20DE%20JULHO%20ADMINISTRADORA%20DE%20BENEF%C3%ADCIOS%20LTDA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rg_ANS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?registro_ans=419761",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "registro_ans",
+							"value": "419761"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UF",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?uf=MG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "uf",
+							"value": "MG"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
