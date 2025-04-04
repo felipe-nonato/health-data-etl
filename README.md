@@ -96,8 +96,8 @@ cp .env.sample .env
 
 ```bash
 docker-compose up -d postgres
-docker exec -i meu_postgres psql -U meu_usuario -d meu_banco < ~/Codes/health-data-etl/scripts/querys/init.sql
-docker cp /home/lipe/Codes/health-data-etl/scripts/data/. meu_postgres:/tmp
+docker exec -i meu_postgres psql -U meu_usuario -d meu_banco < dir_name/health-data-etl/scripts/querys/init.sql
+docker cp dir_name/health-data-etl/scripts/data/. meu_postgres:/tmp
 ```
 
 ## 📊 Estrutura do Projeto
