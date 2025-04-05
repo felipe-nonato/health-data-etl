@@ -29,6 +29,42 @@ def add_cors_headers(response):
     response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
     return response
 
+@app.route('/')
+def index():
+    """
+    Rota principal que retorna um HTML simples com as rotas disponíveis.
+    """
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>API Health Data ETL</title>
+    </head>
+    <body>
+        <h1>Bem-vindo à API Health Data ETL</h1>
+        <p>Rotas disponíveis:</p>
+        <ul>
+            <li><strong>GET /operadoras</strong>: Busca operadoras com base em parâmetros específicos ou uma query geral.</li>
+            <ul>
+                <li>Parâmetros aceitos:</li>
+                <li><code>query</code>: Busca geral em todos os campos.</li>
+                <li><code>registro_ans</code>, <code>cnpj</code>, <code>razao_social</code>, <code>nome_fantasia</code>, <code>modalidade</code>, <code>logradouro</code>, <code>numero</code>, <code>complemento</code>, <code>bairro</code>, <code>cidade</code>, <code>uf</code>, <code>cep</code>, <code>ddd</code>, <code>telefone</code>, <code>fax</code>, <code>endereco_eletronico</code>, <code>representante</code>, <code>cargo_representante</code>, <code>regiao_de_comercializacao</code>, <code>data_registro_ans</code></li>
+            </ul>
+        </ul>
+        <p>Exemplo de uso:</p>
+        <ul>
+            <li><code>/operadoras?query=São Paulo</code></li>
+            <li><code>/operadoras?cidade=São Paulo&uf=SP</code></li>
+        </ul>
+    </body>
+    </html>
+    """
+    response = make_response(html_content, 200)
+    response.headers["Content-Type"] = "text/html"
+    return response
+
 @app.route('/operadoras', methods=['GET'])
 def search_operadoras():
     """
