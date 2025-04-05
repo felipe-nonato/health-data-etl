@@ -1,11 +1,27 @@
 <script setup>
 import Search from './components/Search.vue'
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+
+
+
+const windowWidth = ref(window.innerWidth);
+
+function updateWindowWidth() {
+  windowWidth.value = window.innerWidth;
+}
+
+onMounted(() => {
+  window.addEventListener('resize', updateWindowWidth);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWindowWidth);
+});
 import axios from 'axios'
 
 const searchResults = ref([]) // Inicializado como array vazio
 const currentPage = ref(1)
-const resultsPerPage = 3
+let resultsPerPage = 4
 
 // Computed para calcular os resultados da página atual
 const paginatedResults = computed(() => {
@@ -16,6 +32,9 @@ const paginatedResults = computed(() => {
   const end = start + resultsPerPage;
   return searchResults.value.slice(start, end);
 });
+
+// Computed para verificar se é dispositivo móvel
+const isMobile = computed(() => windowWidth.value <= 768);
 
 async function fetchSearchResults(query) {
   try {
@@ -58,7 +77,7 @@ function previousPage() {
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="100" height="100" />
     <div class="links">
       <a target="_blank" href="https://github.com/felipe-nonato/health-data-etl">Github</a>
       <a target="_blank" href="https://www.linkedin.com/in/lu%C3%ADs-felipe-nonato-840400203/">Linkedin</a>
@@ -68,7 +87,17 @@ function previousPage() {
   <main>
     <Search @input="fetchSearchResults($event.target.value)" />
     <div class="table-container">
-      <table v-if="Array.isArray(paginatedResults) && paginatedResults.length" class="results-table">
+      <!-- Layout para dispositivos móveis -->
+      <div v-if="isMobile && paginatedResults.length" class="mobile-results">
+        <div v-for="result in paginatedResults" :key="result.registro_ans" class="mobile-result">
+          <div v-for="(value, key) in result" :key="key" class="mobile-row">
+            <strong>{{ key }}:</strong> <span>{{ value }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout para dispositivos maiores -->
+      <table v-else-if="Array.isArray(paginatedResults) && paginatedResults.length" class="results-table">
         <thead>
           <tr>
             <th>Registro ANS</th>
@@ -121,7 +150,7 @@ function previousPage() {
       <p v-else>Nenhum resultado encontrado.</p>
     </div>
 
-    <!-- Botões de paginação -->
+    <!-- Botões de paginação fora do scroll -->
     <div v-if="searchResults.length" class="pagination">
       <button @click="previousPage" :disabled="currentPage === 1">Anterior</button>
       <span>Página {{ currentPage }}</span>
@@ -133,12 +162,12 @@ function previousPage() {
     <hr />
     <div style="display: flex; justify-content: space-between;margin-top: 15px;">
       <p>Health Data ETL</p>
-      <p>Um projeto de ETL para dados de saúde.</p>
+      <p v-if="windowWidth > 768">Um projeto de ETL para dados de saúde.</p>
     </div>
 
     <div style="display: flex; justify-content: space-between;">
       <p>Desenvolvido por Luís Felipe Nonato</p>
-      <p>2025</p>
+      <p v-if="windowWidth > 768">2025</p>
     </div>
   </footer>
 </template>
@@ -146,23 +175,26 @@ function previousPage() {
 <style scoped>
 /* Garante que a página inteira permaneça fixa */
 body {
-  overflow: hidden;
-  /* Impede rolagem da página */
+  margin: 0;
+  padding: 0;
 }
 
 main {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  /* Permite que o conteúdo principal ocupe o espaço disponível */
 }
-
 
 .table-container {
   max-width: 100%;
   overflow-x: auto;
   /* Permite rolagem horizontal apenas na tabela */
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 .results-table {
@@ -206,43 +238,110 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   line-height: 1.5;
+  flex-wrap: wrap;
 }
 
 .links {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 2rem;
 }
 
 footer {
   width: 100%;
   color: gray;
+  margin-top: auto;
+  /* Garante que o footer fique no final da página */
+  text-align: center;
 }
 
 footer hr {
   margin: 2px 0;
 }
 
-@media (min-width: 1024px) {
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
   header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .table-container {
+    margin: 0.5rem;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  .results-table th,
+  .results-table td {
+    font-size: 0.8rem;
+    padding: 0.3rem;
   }
+
+  .pagination {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pagination button {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .results-table th,
+  .results-table td {
+    font-size: 0.7rem;
+    padding: 0.2rem;
+  }
+
+  .pagination button {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+  }
+}
+
+.mobile-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-result {
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.mobile-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-row strong {
+  font-weight: bold;
 }
 </style>

@@ -33,4 +33,10 @@ import IconSearch from './icons/IconSearch.vue'
   padding: 0.5rem 2rem;
   font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 90vw;
+  }
+}
 </style>
