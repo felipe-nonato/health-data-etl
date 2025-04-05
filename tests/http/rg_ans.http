@@ -1,5 +1,5 @@
 #GET BY REGISTRO_ANS
 
-GET http://69.62.100.190:5000/operadoras?registro_ans=419761 HTTP/1.1
+GET https://etl-api.felipenonato.com:5000/operadoras?registro_ans=419761 HTTP/1.1
 Host: 69.62.100.190:5000
 Accept: application/json
