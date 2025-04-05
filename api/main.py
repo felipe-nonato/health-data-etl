@@ -4,7 +4,9 @@ import os
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+
+# Configurando o CORS para permitir todas as origens
+CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Construindo o caminho absoluto para o arquivo CSV
