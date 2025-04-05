@@ -1,5 +1,5 @@
 #GET RAZÃO SOCIAL
 
-GET https://etl-api.felipenonato.com:5000/operadoras?razao_social=18%20DE%20JULHO%20ADMINISTRADORA%20DE%20BENEF%C3%ADCIOS%20LTDA HTTP/1.1
-Host: 69.62.100.190:5000
+GET https://etl-api.felipenonato.com/operadoras?razao_social=18%20DE%20JULHO%20ADMINISTRADORA%20DE%20BENEF%C3%ADCIOS%20LTDA HTTP/1.1
+Host: 69.62.100.190
 Accept: application/json

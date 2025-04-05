@@ -13,7 +13,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://etl-api.felipenonato.com:5000/operadoras?nome_fantasia=A.P.S.%20SAÚDE",
+					"raw": "https://etl-api.felipenonato.com/operadoras?nome_fantasia=A.P.S.%20SAÚDE",
 					"protocol": "http",
 					"host": [
 						"69.62.100.190"
@@ -38,7 +38,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://etl-api.felipenonato.com:5000/operadoras?query=paraiba",
+					"raw": "https://etl-api.felipenonato.com/operadoras?query=paraiba",
 					"protocol": "http",
 					"host": [
 						"69.62.100.190"
@@ -63,7 +63,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://etl-api.felipenonato.com:5000/operadoras?cidade=Além%20Paraíba",
+					"raw": "https://etl-api.felipenonato.com/operadoras?cidade=Além%20Paraíba",
 					"protocol": "http",
 					"host": [
 						"69.62.100.190"
@@ -88,7 +88,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://etl-api.felipenonato.com:5000/operadoras?cnpj=7867825000157",
+					"raw": "https://etl-api.felipenonato.com/operadoras?cnpj=7867825000157",
 					"protocol": "http",
 					"host": [
 						"69.62.100.190"
@@ -113,7 +113,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://etl-api.felipenonato.com:5000/operadoras?modalidade=Administradora%20de%20Benef%C3%ADcios",
+					"raw": "https://etl-api.felipenonato.com/operadoras?modalidade=Administradora%20de%20Benef%C3%ADcios",
 					"protocol": "http",
 					"host": [
 						"69.62.100.190"
@@ -138,7 +138,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://etl-api.felipenonato.com:5000/operadoras?razao_social=18%20DE%20JULHO%20ADMINISTRADORA%20DE%20BENEF%C3%ADCIOS%20LTDA",
+					"raw": "https://etl-api.felipenonato.com/operadoras?razao_social=18%20DE%20JULHO%20ADMINISTRADORA%20DE%20BENEF%C3%ADCIOS%20LTDA",
 					"protocol": "http",
 					"host": [
 						"69.62.100.190"
@@ -163,7 +163,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://etl-api.felipenonato.com:5000/operadoras?registro_ans=419761",
+					"raw": "https://etl-api.felipenonato.com/operadoras?registro_ans=419761",
 					"protocol": "http",
 					"host": [
 						"69.62.100.190"
@@ -188,7 +188,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://etl-api.felipenonato.com:5000/operadoras?uf=MG",
+					"raw": "https://etl-api.felipenonato.com/operadoras?uf=MG",
 					"protocol": "http",
 					"host": [
 						"69.62.100.190"

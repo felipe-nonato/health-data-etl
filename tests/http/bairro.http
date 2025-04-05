@@ -1,5 +1,5 @@
 #GET BY BAIRRO
 
-GET https://etl-api.felipenonato.com:5000/operadoras?bairro=PRA%C3%87A%20DA%20BANDEIRA HTTP/1.1
-Host: 69.62.100.190:5000
+GET https://etl-api.felipenonato.com/operadoras?bairro=PRA%C3%87A%20DA%20BANDEIRA HTTP/1.1
+Host: 69.62.100.190
 Accept: application/json

@@ -1,6 +1,6 @@
 
 #GET BY CNPJ
 
-GET https://etl-api.felipenonato.com:5000/operadoras?cnpj=7867825000157 HTTP/1.1
-Host: 69.62.100.190:5000
+GET https://etl-api.felipenonato.com/operadoras?cnpj=7867825000157 HTTP/1.1
+Host: 69.62.100.190
 Accept: application/json

@@ -1,5 +1,5 @@
 #GET BY MODALIDADE
 
-GET https://etl-api.felipenonato.com:5000/operadoras?modalidade=Administradora%20de%20Benef%C3%ADcios HTTP/1.1
-Host: 69.62.100.190:5000
+GET https://etl-api.felipenonato.com/operadoras?modalidade=Administradora%20de%20Benef%C3%ADcios HTTP/1.1
+Host: 69.62.100.190
 Accept: application/json
