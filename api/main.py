@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 import pandas as pd
 import os
 from flask_cors import CORS
@@ -18,6 +18,16 @@ operadoras_df = pd.read_csv(OPERADORAS_CSV_PATH, sep=';', encoding='utf-8', low_
 
 # Convertendo os nomes das colunas para letras minúsculas
 operadoras_df.columns = operadoras_df.columns.str.lower()
+
+@app.after_request
+def add_cors_headers(response):
+    """
+    Adiciona os cabeçalhos CORS a todas as respostas.
+    """
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
 
 @app.route('/operadoras', methods=['GET'])
 def search_operadoras():
@@ -56,7 +66,9 @@ def search_operadoras():
     results = filtered_operadoras.to_json(orient='records', force_ascii=False)
 
     # Retornando o JSON como string
-    return results, 200
+    response = make_response(results, 200)
+    response.headers["Content-Type"] = "application/json"
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=5000)
